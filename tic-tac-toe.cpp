@@ -61,6 +61,9 @@ public:
 		if (grid[0][0] != Cell::empty and grid[0][0] == grid[1][1] and grid[1][1] == grid[2][2]) {
 			return (grid[0][0] == Cell::cross ? State::cross_won : State::zero_won);
 		}
+		if (grid[0][2] != Cell::empty and grid[0][2] == grid[1][1] and grid[1][1] == grid[2][0]) {
+			return (grid[0][2] == Cell::cross ? State::cross_won : State::zero_won);
+		}
 		for (auto& row : grid) {
 			for (auto& cell : row) {
 				if (cell == Cell::empty) {
